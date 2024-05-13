@@ -24,8 +24,18 @@ def check_bound(obj_rct: pg.Rect) -> tuple[bool, bool]:
         tate = False
     return yoko, tate
 
-class explosion:
+#class explosion:
+    #def __init__(self):
+
+class Score:  #スコア表示
     def __init__(self):
+        self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
+        self.score = 0  #スコアの初期値を設定
+        self.img = self.fonto.render("表示させる文字列", 0, (0, 0, 255))
+        
+    def update(self, screen: pg.Surface):
+        self.txt = self.fonto.render(f"Score{self.score}", 0, (0, 0, 255))
+        screen.blit(self.txt,[100, 50])  #スクリーンにblit
 
 class Bird:
     """
